@@ -1,0 +1,27 @@
+kaam buniyad() {
+    int x = 10;
+    vikha << "Hello";
+    
+    int 1y =20; 
+    float @salary;       
+    a # b;       
+    test $ value; 
+    
+    agar (x > 5) {   
+        vikha << x;
+    }
+    
+    warna {   
+        vikha << "No";
+    }
+    
+    jab_tak (x < 10) { 
+        x++;
+    }
+    
+    function test() {
+        return 5;
+    }
+    
+    wapas 0;
+}

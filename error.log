@@ -1,0 +1,4 @@
+Line 5: ERROR → 1y (invalid number)
+Line 6: ERROR → @salary (invalid identifier)
+Line 7: ERROR → # (unrecognized symbol)
+Line 8: ERROR → $ (unrecognized symbol)

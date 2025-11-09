@@ -1,0 +1,247 @@
+=================================================================
+          SaraikScript Lexical Analyzer Output
+=================================================================
+Line 1: KEYWORD → kaam
+Line 1: KEYWORD → buniyad
+Line 1: LEFT_PAREN → (
+Line 1: RIGHT_PAREN → )
+Line 1: LEFT_BRACE → {
+Line 2: COMMENT → // Variable declarations
+Line 3: DATA_TYPE → int
+Line 3: IDENTIFIER → a
+Line 3: ASSIGNMENT → =
+Line 3: INTEGER → 10
+Line 3: SEMICOLON → ;
+Line 4: DATA_TYPE → int
+Line 4: IDENTIFIER → b
+Line 4: ASSIGNMENT → =
+Line 4: INTEGER → 20
+Line 4: SEMICOLON → ;
+Line 5: DATA_TYPE → int
+Line 5: IDENTIFIER → sum
+Line 5: ASSIGNMENT → =
+Line 5: INTEGER → 0
+Line 5: SEMICOLON → ;
+Line 6: DATA_TYPE → float
+Line 6: IDENTIFIER → average
+Line 6: ASSIGNMENT → =
+Line 6: FLOAT → 0.0
+Line 6: SEMICOLON → ;
+Line 7: DATA_TYPE → bool
+Line 7: IDENTIFIER → flag
+Line 7: ASSIGNMENT → =
+Line 7: KEYWORD → sach
+Line 7: SEMICOLON → ;
+Line 9: COMMENT → // Output message
+Line 10: KEYWORD → vikha
+Line 10: STREAM_OUT → <<
+Line 10: STRING_LITERAL → "SaraikScript Program Started"
+Line 10: SEMICOLON → ;
+Line 12: COMMENT → // Input from user
+Line 13: KEYWORD → vikha
+Line 13: STREAM_OUT → <<
+Line 13: STRING_LITERAL → "Enter first number: "
+Line 13: SEMICOLON → ;
+Line 14: KEYWORD → das
+Line 14: STREAM_IN → >>
+Line 14: IDENTIFIER → a
+Line 14: SEMICOLON → ;
+Line 15: KEYWORD → vikha
+Line 15: STREAM_OUT → <<
+Line 15: STRING_LITERAL → "Enter second number: "
+Line 15: SEMICOLON → ;
+Line 16: KEYWORD → das
+Line 16: STREAM_IN → >>
+Line 16: IDENTIFIER → b
+Line 16: SEMICOLON → ;
+Line 18: COMMENT → // Arithmetic operations
+Line 19: IDENTIFIER → sum
+Line 19: ASSIGNMENT → =
+Line 19: IDENTIFIER → a
+Line 19: OPERATOR → +
+Line 19: IDENTIFIER → b
+Line 19: SEMICOLON → ;
+Line 20: IDENTIFIER → average
+Line 20: ASSIGNMENT → =
+Line 20: IDENTIFIER → sum
+Line 20: OPERATOR → /
+Line 20: FLOAT → 2.0
+Line 20: SEMICOLON → ;
+Line 22: COMMENT → // Conditional statement
+Line 23: KEYWORD → je
+Line 23: LEFT_PAREN → (
+Line 23: IDENTIFIER → a
+Line 23: RELATIONAL_OP → >
+Line 23: IDENTIFIER → b
+Line 23: RIGHT_PAREN → )
+Line 23: LEFT_BRACE → {
+Line 24: KEYWORD → vikha
+Line 24: STREAM_OUT → <<
+Line 24: STRING_LITERAL → "A is greater than B"
+Line 24: SEMICOLON → ;
+Line 25: RIGHT_BRACE → }
+Line 26: KEYWORD → bia
+Line 26: LEFT_BRACE → {
+Line 27: KEYWORD → vikha
+Line 27: STREAM_OUT → <<
+Line 27: STRING_LITERAL → "B is greater than or equal to A"
+Line 27: SEMICOLON → ;
+Line 28: RIGHT_BRACE → }
+Line 30: COMMENT → // Logical operators
+Line 31: KEYWORD → je
+Line 31: LEFT_PAREN → (
+Line 31: IDENTIFIER → a
+Line 31: RELATIONAL_OP → >
+Line 31: INTEGER → 0
+Line 31: KEYWORD → te
+Line 31: IDENTIFIER → b
+Line 31: RELATIONAL_OP → >
+Line 31: INTEGER → 0
+Line 31: RIGHT_PAREN → )
+Line 31: LEFT_BRACE → {
+Line 32: KEYWORD → vikha
+Line 32: STREAM_OUT → <<
+Line 32: STRING_LITERAL → "Both numbers are positive"
+Line 32: SEMICOLON → ;
+Line 33: RIGHT_BRACE → }
+Line 35: KEYWORD → je
+Line 35: LEFT_PAREN → (
+Line 35: IDENTIFIER → a
+Line 35: RELATIONAL_OP → ==
+Line 35: INTEGER → 0
+Line 35: KEYWORD → ya
+Line 35: IDENTIFIER → b
+Line 35: RELATIONAL_OP → ==
+Line 35: INTEGER → 0
+Line 35: RIGHT_PAREN → )
+Line 35: LEFT_BRACE → {
+Line 36: KEYWORD → vikha
+Line 36: STREAM_OUT → <<
+Line 36: STRING_LITERAL → "At least one number is zero"
+Line 36: SEMICOLON → ;
+Line 37: RIGHT_BRACE → }
+Line 39: COMMENT → // Not operator
+Line 40: KEYWORD → je
+Line 40: LEFT_PAREN → (
+Line 40: KEYWORD → koh
+Line 40: IDENTIFIER → flag
+Line 40: RIGHT_PAREN → )
+Line 40: LEFT_BRACE → {
+Line 41: KEYWORD → vikha
+Line 41: STREAM_OUT → <<
+Line 41: STRING_LITERAL → "Flag is false"
+Line 41: SEMICOLON → ;
+Line 42: RIGHT_BRACE → }
+Line 44: COMMENT → // While loop
+Line 45: DATA_TYPE → int
+Line 45: IDENTIFIER → counter
+Line 45: ASSIGNMENT → =
+Line 45: INTEGER → 0
+Line 45: SEMICOLON → ;
+Line 46: KEYWORD → jein_tak
+Line 46: LEFT_PAREN → (
+Line 46: IDENTIFIER → counter
+Line 46: RELATIONAL_OP → <
+Line 46: INTEGER → 5
+Line 46: RIGHT_PAREN → )
+Line 46: LEFT_BRACE → {
+Line 47: KEYWORD → vikha
+Line 47: STREAM_OUT → <<
+Line 47: STRING_LITERAL → "Counter: "
+Line 47: SEMICOLON → ;
+Line 48: KEYWORD → vikha
+Line 48: STREAM_OUT → <<
+Line 48: IDENTIFIER → counter
+Line 48: SEMICOLON → ;
+Line 49: IDENTIFIER → counter
+Line 49: INCREMENT → ++
+Line 49: SEMICOLON → ;
+Line 50: RIGHT_BRACE → }
+Line 52: COMMENT → // For loop
+Line 53: KEYWORD → wastey
+Line 53: LEFT_PAREN → (
+Line 53: DATA_TYPE → int
+Line 53: IDENTIFIER → i
+Line 53: ASSIGNMENT → =
+Line 53: INTEGER → 0
+Line 53: SEMICOLON → ;
+Line 53: IDENTIFIER → i
+Line 53: RELATIONAL_OP → <
+Line 53: INTEGER → 3
+Line 53: SEMICOLON → ;
+Line 53: IDENTIFIER → i
+Line 53: INCREMENT → ++
+Line 53: RIGHT_PAREN → )
+Line 53: LEFT_BRACE → {
+Line 54: KEYWORD → vikha
+Line 54: STREAM_OUT → <<
+Line 54: STRING_LITERAL → "Loop iteration: "
+Line 54: SEMICOLON → ;
+Line 55: KEYWORD → vikha
+Line 55: STREAM_OUT → <<
+Line 55: IDENTIFIER → i
+Line 55: SEMICOLON → ;
+Line 56: RIGHT_BRACE → }
+Line 58: COMMENT → // Decrement operator
+Line 59: IDENTIFIER → b
+Line 59: DECREMENT → --
+Line 59: SEMICOLON → ;
+Line 60: KEYWORD → vikha
+Line 60: STREAM_OUT → <<
+Line 60: STRING_LITERAL → "After decrement, b = "
+Line 60: SEMICOLON → ;
+Line 61: KEYWORD → vikha
+Line 61: STREAM_OUT → <<
+Line 61: IDENTIFIER → b
+Line 61: SEMICOLON → ;
+Line 63: COMMENT → // Function call
+Line 64: KEYWORD → kar
+Line 64: IDENTIFIER → display_result
+Line 64: LEFT_PAREN → (
+Line 64: IDENTIFIER → sum
+Line 64: COMMA → ,
+Line 64: IDENTIFIER → average
+Line 64: RIGHT_PAREN → )
+Line 64: SEMICOLON → ;
+Line 66: KEYWORD → vikha
+Line 66: STREAM_OUT → <<
+Line 66: STRING_LITERAL → "Program Finished"
+Line 66: SEMICOLON → ;
+Line 67: KEYWORD → wapas
+Line 67: INTEGER → 0
+Line 67: SEMICOLON → ;
+Line 68: RIGHT_BRACE → }
+Line 70: COMMENT → // Function definition
+Line 71: KEYWORD → kaam
+Line 71: IDENTIFIER → display_result
+Line 71: LEFT_PAREN → (
+Line 71: DATA_TYPE → int
+Line 71: IDENTIFIER → total
+Line 71: COMMA → ,
+Line 71: DATA_TYPE → float
+Line 71: IDENTIFIER → avg
+Line 71: RIGHT_PAREN → )
+Line 71: LEFT_BRACE → {
+Line 72: KEYWORD → vikha
+Line 72: STREAM_OUT → <<
+Line 72: STRING_LITERAL → "Total Sum: "
+Line 72: SEMICOLON → ;
+Line 73: KEYWORD → vikha
+Line 73: STREAM_OUT → <<
+Line 73: IDENTIFIER → total
+Line 73: SEMICOLON → ;
+Line 74: KEYWORD → vikha
+Line 74: STREAM_OUT → <<
+Line 74: STRING_LITERAL → "Average: "
+Line 74: SEMICOLON → ;
+Line 75: KEYWORD → vikha
+Line 75: STREAM_OUT → <<
+Line 75: IDENTIFIER → avg
+Line 75: SEMICOLON → ;
+Line 76: KEYWORD → wapas
+Line 76: SEMICOLON → ;
+Line 77: RIGHT_BRACE → }
+=================================================================
+Total Tokens: 240
+Total Lines: 78
+=================================================================

@@ -1,0 +1,76 @@
+=================================================================
+          SaraikScript Lexical Analyzer Output
+=================================================================
+Line 1: KEYWORD → kaam
+Line 1: KEYWORD → buniyad
+Line 1: LEFT_PAREN → (
+Line 1: RIGHT_PAREN → )
+Line 1: LEFT_BRACE → {
+Line 2: DATA_TYPE → int
+Line 2: IDENTIFIER → x
+Line 2: ASSIGNMENT → =
+Line 2: INTEGER → 10
+Line 2: SEMICOLON → ;
+Line 3: KEYWORD → vikha
+Line 3: STREAM_OUT → <<
+Line 3: STRING_LITERAL → "Hello"
+Line 3: SEMICOLON → ;
+Line 5: DATA_TYPE → int
+Line 5: ASSIGNMENT → =
+Line 5: INTEGER → 20
+Line 5: SEMICOLON → ;
+Line 6: DATA_TYPE → float
+Line 6: SEMICOLON → ;
+Line 7: IDENTIFIER → a
+Line 7: IDENTIFIER → b
+Line 7: SEMICOLON → ;
+Line 8: IDENTIFIER → test
+Line 8: IDENTIFIER → value
+Line 8: SEMICOLON → ;
+Line 10: IDENTIFIER → agar
+Line 10: LEFT_PAREN → (
+Line 10: IDENTIFIER → x
+Line 10: RELATIONAL_OP → >
+Line 10: INTEGER → 5
+Line 10: RIGHT_PAREN → )
+Line 10: LEFT_BRACE → {
+Line 11: KEYWORD → vikha
+Line 11: STREAM_OUT → <<
+Line 11: IDENTIFIER → x
+Line 11: SEMICOLON → ;
+Line 12: RIGHT_BRACE → }
+Line 14: IDENTIFIER → warna
+Line 14: LEFT_BRACE → {
+Line 15: KEYWORD → vikha
+Line 15: STREAM_OUT → <<
+Line 15: STRING_LITERAL → "No"
+Line 15: SEMICOLON → ;
+Line 16: RIGHT_BRACE → }
+Line 18: IDENTIFIER → jab_tak
+Line 18: LEFT_PAREN → (
+Line 18: IDENTIFIER → x
+Line 18: RELATIONAL_OP → <
+Line 18: INTEGER → 10
+Line 18: RIGHT_PAREN → )
+Line 18: LEFT_BRACE → {
+Line 19: IDENTIFIER → x
+Line 19: INCREMENT → ++
+Line 19: SEMICOLON → ;
+Line 20: RIGHT_BRACE → }
+Line 22: IDENTIFIER → function
+Line 22: IDENTIFIER → test
+Line 22: LEFT_PAREN → (
+Line 22: RIGHT_PAREN → )
+Line 22: LEFT_BRACE → {
+Line 23: IDENTIFIER → return
+Line 23: INTEGER → 5
+Line 23: SEMICOLON → ;
+Line 24: RIGHT_BRACE → }
+Line 26: KEYWORD → wapas
+Line 26: INTEGER → 0
+Line 26: SEMICOLON → ;
+Line 27: RIGHT_BRACE → }
+=================================================================
+Total Tokens: 69
+Total Lines: 28
+=================================================================
