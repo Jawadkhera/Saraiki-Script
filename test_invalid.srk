@@ -1,0 +1,28 @@
+kaam buniyad() {
+    // Error 1: Missing semicolon
+    int x = 10
+    
+    // Error 2: Missing parentheses in condition
+    je x > 5 {
+        vikha << "X is greater";
+    }
+    
+    // Error 3: Missing closing parenthesis
+    jein_tak (x < 20 {
+        x++;
+    }
+    
+    // Error 4: Invalid statement structure - missing braces
+    bia
+        vikha << "This should have braces";
+    
+    // Error 5: Missing semicolon after function call
+    kar someFunction()
+    
+    // Error 6: Unclosed brace
+    je (x == 10) {
+        vikha << "X is ten";
+    // Missing closing brace here
+    
+    wapas 0;
+}

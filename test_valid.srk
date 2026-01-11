@@ -1,0 +1,77 @@
+kaam buniyad() {
+    // Variable declarations
+    int a = 10;
+    int b = 20;
+    int sum = 0;
+    float average = 0.0;
+    bool flag = sach;
+    
+    // Output message
+    vikha << "SaraikScript Program Started";
+    
+    // Input from user
+    vikha << "Enter first number: ";
+    das >> a;
+    vikha << "Enter second number: ";
+    das >> b;
+    
+    // Arithmetic operations
+    sum = a + b;
+    average = sum / 2.0;
+    
+    // Conditional statement
+    je (a > b) {
+        vikha << "A is greater than B";
+    }
+    bia {
+        vikha << "B is greater than or equal to A";
+    }
+    
+    // Logical operators
+    je (a > 0 te b > 0) {
+        vikha << "Both numbers are positive";
+    }
+    
+    je (a == 0 ya b == 0) {
+        vikha << "At least one number is zero";
+    }
+    
+    // Not operator
+    je (koh flag) {
+        vikha << "Flag is false";
+    }
+    
+    // While loop
+    int counter = 0;
+    jein_tak (counter < 5) {
+        vikha << "Counter: ";
+        vikha << counter;
+        counter++;
+    }
+    
+    // For loop
+    wastey (int i = 0; i < 3; i++) {
+        vikha << "Loop iteration: ";
+        vikha << i;
+    }
+    
+    // Decrement operator
+    b--;
+    vikha << "After decrement, b = ";
+    vikha << b;
+    
+    // Function call
+    kar display_result(sum, average);
+    
+    vikha << "Program Finished";
+    wapas 0;
+}
+
+// Function definition
+kaam display_result(int total, float avg) {
+    vikha << "Total Sum: ";
+    vikha << total;
+    vikha << "Average: ";
+    vikha << avg;
+    wapas;
+}

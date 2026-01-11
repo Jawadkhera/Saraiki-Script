@@ -1,17 +1,10 @@
 %{
-
+#include "parser.tab.h"
 #include <stdio.h>
-#include <string.h>
-
-int line_number = 1;
-int token_count = 0;
-
-void print_token(const char* token_type, const char* lexeme) {
-    token_count++;
-    printf("Line %d: %s → %s\n", line_number, token_type, lexeme);
-}
 
 %}
+
+%option yylineno
 
 /* Regular Expression Definitions */
 DIGIT       [0-9]
@@ -24,138 +17,135 @@ NEWLINE     \n
 
 %%
 
-    /* Keywords */
-"je"            { print_token("KEYWORD", yytext); }
-"bia"           { print_token("KEYWORD", yytext); }
-"jein_tak"      { print_token("KEYWORD", yytext); }
-"wastey"        { print_token("KEYWORD", yytext); }
-"kar"           { print_token("KEYWORD", yytext); }
-"wapas"         { print_token("KEYWORD", yytext); }
-"te"            { print_token("KEYWORD", yytext); }
-"ya"            { print_token("KEYWORD", yytext); }
-"koh"           { print_token("KEYWORD", yytext); }
-"sach"          { print_token("KEYWORD", yytext); }
-"Koor"          { print_token("KEYWORD", yytext); }
-"kaam"          { print_token("KEYWORD", yytext); }
-"das"           { print_token("KEYWORD", yytext); }
-"vikha"         { print_token("KEYWORD", yytext); }
-"buniyad"       { print_token("KEYWORD", yytext); }
+    /* KEYWORDS */
 
-    /* Data Types */
-"int"           { print_token("DATA_TYPE", yytext); }
-"float"         { print_token("DATA_TYPE", yytext); }
-"char"          { print_token("DATA_TYPE", yytext); }
-"string"        { print_token("DATA_TYPE", yytext); }
-"bool"          { print_token("DATA_TYPE", yytext); }
-"void"          { print_token("DATA_TYPE", yytext); }
+"je"            { return JE; }
+"bia"           { return BIA; }
+"jein_tak"      { return JEIN_TAK; }
+"wastey"        { return WASTEY; }
+"kar"           { return KAR; }
+"wapas"         { return WAPAS; }
+"te"            { return TE; }
+"ya"            { return YA; }
+"koh"           { return KOH; }
+"sach"          { return SACH; }
+"Koor"          { return KOOR; }
+"kaam"          { return KAAM; }
+"das"           { return DAS; }
+"vikha"         { return VIKHA; }
+"buniyad"       { return BUNIYAD; }
 
-    /* Arithmetic Operators */
-"+"             { print_token("OPERATOR", yytext); }
-"-"             { print_token("OPERATOR", yytext); }
-"*"             { print_token("OPERATOR", yytext); }
-"/"             { print_token("OPERATOR", yytext); }
-"%"             { print_token("OPERATOR", yytext); }
+    /* DATA TYPES */
 
-    /* Assignment Operator */
-"="             { print_token("ASSIGNMENT", yytext); }
+"int"           { return INT; }
+"float"         { return FLOAT; }
+"char"          { return CHAR; }
+"string"        { return STRING; }
+"bool"          { return BOOL; }
+"void"          { return VOID; }
 
-    /* Increment/Decrement */
-"++"            { print_token("INCREMENT", yytext); }
-"--"            { print_token("DECREMENT", yytext); }
+    /* ARITHMETIC OPERATORS */
 
-    /* Relational Operators */
-"=="            { print_token("RELATIONAL_OP", yytext); }
-"!="            { print_token("RELATIONAL_OP", yytext); }
-">"             { print_token("RELATIONAL_OP", yytext); }
-"<"             { print_token("RELATIONAL_OP", yytext); }
-">="            { print_token("RELATIONAL_OP", yytext); }
-"<="            { print_token("RELATIONAL_OP", yytext); }
+"+"             { return PLUS; }
+"-"             { return MINUS; }
+"*"             { return MULTIPLY; }
+"/"             { return DIVIDE; }
+"%"             { return MODULO; }
 
-    /* Stream Operators */
-">>"            { print_token("STREAM_IN", yytext); }
-"<<"            { print_token("STREAM_OUT", yytext); }
+    /* ASSIGNMENT OPERATOR */
 
-    /* Punctuations */
-";"             { print_token("SEMICOLON", yytext); }
-","             { print_token("COMMA", yytext); }
-"("             { print_token("LEFT_PAREN", yytext); }
-")"             { print_token("RIGHT_PAREN", yytext); }
-"{"             { print_token("LEFT_BRACE", yytext); }
-"}"             { print_token("RIGHT_BRACE", yytext); }
-"["             { print_token("LEFT_BRACKET", yytext); }
-"]"             { print_token("RIGHT_BRACKET", yytext); }
+"="             { return ASSIGN; }
 
-    /* Literals */
-{INTEGER}       { print_token("INTEGER", yytext); }
-{FLOAT}         { print_token("FLOAT", yytext); }
-\"([^\\\"]|\\.)*\"  { print_token("STRING_LITERAL", yytext); }
-'([^\\']|\\.)'      { print_token("CHAR_LITERAL", yytext); }
+    /* INCREMENT/DECREMENT */
 
-    /* Invalid Identifiers - starting with special characters */
+"++"            { return INCREMENT; }
+"--"            { return DECREMENT; }
+
+    /*  RELATIONAL OPERATORS */
+
+"=="            { return EQ; }
+"!="            { return NEQ; }
+">"             { return GT; }
+"<"             { return LT; }
+">="            { return GTE; }
+"<="            { return LTE; }
+
+    /* STREAM OPERATORS */
+
+">>"            { return STREAM_IN; }
+"<<"            { return STREAM_OUT; }
+
+    /* PUNCTUATIONS */
+
+";"             { return SEMICOLON; }
+","             { return COMMA; }
+"("             { return LPAREN; }
+")"             { return RPAREN; }
+"{"             { return LBRACE; }
+"}"             { return RBRACE; }
+"["             { return LBRACKET; }
+"]"             { return RBRACKET; }
+
+    /* LITERALS */
+
+{INTEGER}       { return INTEGER; }
+{FLOAT}         { return FLOAT_NUM; }
+\"([^\\\"]|\\.)*\"  { return STRING_LITERAL; }
+'([^\\']|\\.)'      { return CHAR_LITERAL; }
+
+    /*      INVALID IDENTIFIERS
+       Starting with special characters */
+
 [@#$%^&!~`][a-zA-Z0-9_]+  { 
-    fprintf(stderr, "Line %d: ERROR → %s (invalid identifier)\n", line_number, yytext);
+    fprintf(stderr, "Line %d: Lexical Error - Invalid identifier '%s' (cannot start with special character)\n", 
+            yylineno, yytext);
+    return -1;
 }
 
-    /* Invalid Numbers - starting with digit followed by letters */
+    /*            INVALID NUMBERS
+       Starting with digit followed by letters */
+
 {DIGIT}+[a-zA-Z_]+[a-zA-Z0-9_]*  { 
-    fprintf(stderr, "Line %d: ERROR → %s (invalid number)\n", line_number, yytext);
+    fprintf(stderr, "Line %d: Lexical Error - Invalid number '%s' (cannot have letters after digits)\n", 
+            yylineno, yytext);
+    return -1;
 }
 
-    /* Identifiers */
-{IDENTIFIER}    { print_token("IDENTIFIER", yytext); }
+    /*              IDENTIFIERS
+       Must come after keywords to avoid conflicts */
 
-    /* Comments */
-"//".*          { print_token("COMMENT", yytext); }
-"/*"([^*]|\*+[^*/])*\*+"/"  { print_token("MULTI_COMMENT", yytext); }
+{IDENTIFIER}    { return IDENTIFIER; }
 
+    /*  COMMENTS */
 
-    /* Whitespace and Newline */
-{WHITESPACE}    { /* ignore whitespace */ }
-{NEWLINE}       { line_number++; }
+"//".*          { return COMMENT; }
+"/*"([^*]|\*+[^*/])*\*+"/"  { return COMMENT; }
 
-    /*Unrecognized Symbols*/
+    /*  WHITESPACE AND NEWLINE */
+
+{WHITESPACE}    { /* Ignore whitespace */ }
+{NEWLINE}       { /* Line count handled by %option yylineno */ }
+
+    /* UNRECOGNIZED SYMBOLS */
+
 [@#$%^&!~`|\\]  { 
-    fprintf(stderr, "Line %d: ERROR → %s (unrecognized symbol)\n", line_number, yytext);
+    fprintf(stderr, "Line %d: Lexical Error - Unrecognized symbol '%s'\n", 
+            yylineno, yytext);
+    return -1;
 }
 
-    /* Any other unrecognized character */
+    /* ANY OTHER UNRECOGNIZED CHARACTER */
+
 .               { 
-    fprintf(stderr, "Line %d: ERROR → %s (unrecognized character)\n", line_number, yytext);
+    fprintf(stderr, "Line %d: Lexical Error - Unrecognized character '%s'\n", 
+            yylineno, yytext);
+    return -1;
 }
 
 %%
 
-int yywrap() {
-    return 1;
-}
+/* WRAPPER FUNCTION */
 
-int main(int argc, char *argv[]) {
-    FILE *input_file;
-    
-    if (argc < 2) {
-        printf("Usage: %s <input_file>\n", argv[0]);
-        return 1;
-    }
-    
-    input_file = fopen(argv[1], "r");
-    if (!input_file) {
-        fprintf(stderr, "Error: Cannot open file '%s'\n", argv[1]);
-        return 1;
-    }
-    
-    yyin = input_file;
-    
-    printf("=================================================================\n");
-    printf("          SaraikScript Lexical Analyzer Output\n");
-    printf("=================================================================\n");
-    
-    yylex();
-    
-    printf("=================================================================\n");
-    printf("Total Tokens: %d\n", token_count);
-    printf("Total Lines: %d\n", line_number);
-    printf("=================================================================\n");
-    
-    fclose(input_file);
-    return 0;
+int yywrap() {
+    return 1;  /* Indicates end of input */
 }
